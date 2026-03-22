@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best performing configuration so far is embed=32, hidden=192, layers=2, heads=3, intermediate=384 with mean pooling and lr=5e-5, achieving MRR@10=0.4689 (exp_058). The model is 3.20MB which is under the 10MB limit. I want to explore variants of this architecture to see if we can push performance further. I'll try increasing the learning rate, adding depth, trying different pooling strategies, and using pretrained initialization.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0002, "notes": "Try higher learning rate (2e-4) with best architecture to see if we can get better convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_059"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try 3 layers with best architecture and lr=0.0001 to see if adding depth helps", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_060"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try weighted_mean pooling with best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_061"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try pretrained initialization with best architecture to see if it helps convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_062"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.0001, "lr": 0.0001, "notes": "Try hybrid loss with L2 regularization on embeddings with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_063"}

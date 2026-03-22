@@ -1,0 +1,13 @@
+Analysis:
+Based on the results, the best performance so far is 0.4689 MRR@10 with embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384, pooling=mean, lr=5e-5. The model is already quite small at 3.2MB. I want to explore:
+1. Slightly larger models that stay under 10MB to see if we can break the plateau
+2. Different pooling strategies (weighted_mean vs mean)
+3. A different loss function to potentially improve performance
+I'll try increasing hidden_dim to 256 with 2 layers and 4 heads, which should still fit under 10MB.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Try larger hidden_dim (256) with 4 heads to see if we can break the plateau", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_079"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try weighted_mean pooling with best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_080"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test different temperature for InfoNCE loss to see if we can improve performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_081"}
+{"cutoff_minutes": 15, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try larger embedding dimension (48) to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_082"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try 3 layers with best architecture to see if adding depth helps", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_083"}

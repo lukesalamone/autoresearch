@@ -1,0 +1,14 @@
+Analysis:
+The best MRR@10 achieved so far is 0.4681 with embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384. The architecture search has plateaued with similar performance across multiple configurations. I'll now explore:
+1. Different pooling strategies (weighted_mean vs mean) 
+2. Different learning rates around the current best (1e-4)
+3. Slightly increase layers to 3 to see if it helps
+4. Try init_pretrained to see if it provides a boost
+5. Try a hybrid loss with L2 regularization
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try 3 layers with best architecture and lr=0.0001", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_055"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try weighted_mean pooling with best architecture and lr=0.0001", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_056"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0002, "notes": "Try higher learning rate (2e-4) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_057"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try lower learning rate (5e-5) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_058"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try init_pretrained with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_059"}

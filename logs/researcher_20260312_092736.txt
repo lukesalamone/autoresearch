@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, we're approaching the ceiling of our current architecture. The best MRR@10 is 0.4750 with a configuration that's plateaued. We should explore: 1) higher learning rates with the current best architecture to push performance, 2) init_pretrained as a baseline, 3) different pooling strategies, and 4) architecture variations. The model size is consistently under 10MB, so we can safely explore these directions.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try higher learning rate (1e-4) with best architecture to see if it pushes performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_189"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try init_pretrained with best architecture to see if it provides a good baseline", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_190"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try weighted mean pooling with best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_191"}
+{"cutoff_minutes": 15, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try smaller embed_dim (48) with same hidden_dim to see if we can get better trade-off", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_192"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try smaller embed_dim (32) with more layers to see if we can get better performance within size constraints", "num_heads": 2, "num_layers": 4, "pooling": "mean", "exp_id": "exp_193"}

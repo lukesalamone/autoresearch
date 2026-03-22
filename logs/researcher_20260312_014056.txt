@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best MRR@10 achieved is 0.4813 with embed_dim=64, hidden_dim=192, num_layers=2, num_heads=3, mean pooling. The architecture search has plateaued with recent configs showing no improvement. I will now test hybrid loss functions combining InfoNCE with L2 regularization on embeddings, try different pooling strategies, and vary learning rates to see if these changes can push performance further while staying under 10MB.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Baseline config with hybrid loss (InfoNCE + L2 regularization)", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_155"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Higher learning rate with hybrid loss to see if it improves convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_156"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with hybrid loss", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_157"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Try larger hidden_dim (256) with more heads and hybrid loss", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_158"}
+{"cutoff_minutes": 15, "embed_dim": 80, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try larger embed_dim (80) with hybrid loss to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_159"}

@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, exp_008 achieved the best MRR@10 (0.4488) with a 4.13MB model. The architecture was embed=48, hidden=192, 2 layers, 3 heads. The model is still improving, so I'll explore larger hidden dimensions (256) and more layers to see if performance can be improved while staying under 10MB. I'll also try weighted_mean pooling and larger embed_dim (64) to see if these improve performance.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring larger hidden_dim (256) with 2 layers - should be ~6.3MB", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_009"}
+{"cutoff_minutes": 5, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring larger embed_dim (64) with 2 layers - should be ~5.4MB", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_010"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 3-layer architecture with embed=48, hidden=256 - should be ~8.5MB", "num_heads": 4, "num_layers": 3, "pooling": "mean", "exp_id": "exp_011"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Testing weighted_mean pooling with best current architecture", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_012"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 3-layer architecture with smaller embed (32) and larger hidden (256) - should be ~7.5MB", "num_heads": 4, "num_layers": 3, "pooling": "mean", "exp_id": "exp_013"}

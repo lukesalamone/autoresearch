@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best performance so far was achieved with embed=128, hidden=128, 2 layers (exp_001) at 0.4519 MRR@10. However, this is over the 10MB limit. Smaller factorized models like embed=32, hidden=128, 2 layers (exp_002) achieved 0.4103 MRR@10 at only 2.5MB. I'll explore the sweet spot of small embed_dim with larger hidden_dim to maximize MRR@10 while staying under 10MB. The most promising direction is 2-layer configs with embed=32-48 and hidden=192-256. I'll also try weighted_mean pooling which may improve performance.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_015"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=48, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_016"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=32, hidden=256, weighted_mean pooling - should be ~6.3MB", "num_heads": 4, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_017"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring 2-layer with embed=48, hidden=192 - should be ~6.2MB, trying a different ratio", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_018"}
+{"cutoff_minutes": 5, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring 2-layer with embed=64, hidden=192 - should be ~5.4MB, testing larger embed", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_019"}

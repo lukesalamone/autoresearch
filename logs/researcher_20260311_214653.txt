@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best performance so far was 0.4813 with embed_dim=64, hidden_dim=192, num_layers=2, but that was with a larger model that had higher capacity. The current best plateaued around 0.4719. I'll try to improve by exploring deeper architectures (3-4 layers) with higher learning rates (1e-4) and also test init_pretrained as a potential jump-start. I'll keep the factorized embedding approach and stay under 10MB.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test 3 layers with current best architecture to see if depth helps performance", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_138"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test 4 layers with current best architecture to see if more depth helps performance", "num_heads": 3, "num_layers": 4, "pooling": "mean", "exp_id": "exp_139"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with current best architecture to see if it pushes performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_140"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 512, "lr": 5e-05, "notes": "Test larger intermediate dimension (512) with current best architecture to see if it helps performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_141"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test init_pretrained with current best architecture to see if it gives a jump-start", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_142"}

@@ -1,0 +1,9 @@
+Analysis:
+Based on the results so far, we've identified a strong baseline with embed_dim=32, hidden_dim=192, 2 layers, 3 heads, and mean pooling achieving 0.4681 MRR@10. The model is 3.20MB, well under the 10MB limit. I'm now testing a hybrid loss approach that combines InfoNCE with L2 regularization on embeddings to see if this improves performance. This is a structural change as suggested in the instructions.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test hybrid loss with L2 regularization on embeddings (l2_reg_weight=0.0001) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_050"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test hybrid loss with stronger L2 regularization (l2_reg_weight=0.001) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_051"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test hybrid loss with L2 regularization (l2_reg_weight=0.00001) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_052"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test hybrid loss with L2 regularization (l2_reg_weight=0.0001) on larger embed_dim architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_053"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test hybrid loss with L2 regularization on weighted_mean pooling with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_054"}

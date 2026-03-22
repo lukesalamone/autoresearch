@@ -1,0 +1,17 @@
+Analysis:
+Based on the initial results, I see that:
+1. Pretrained initialization (exp_001) achieves 0.4519 MRR@10 but is 8.33MB (under limit)
+2. Factorized embedding (exp_002) achieves 0.4103 MRR@10 but is only 2.50MB
+
+I'll now explore the architecture space to find the best trade-off between size and performance while staying under 10MB. I'll test:
+- Different embed_dim (32, 48, 64) with hidden_dim (128, 192, 256) combinations
+- Layer counts from 2 to 5 to see where the size budget is exhausted
+- Test both mean and weighted_mean pooling
+- Start with lr=5e-5 and batch_size=64 for consistency
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring 3-layer architecture with embed=32, hidden=128 - should be ~3.2MB", "num_heads": 2, "num_layers": 3, "pooling": "mean", "exp_id": "exp_003"}
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring 3-layer architecture with embed=48, hidden=128 - should be ~4.1MB", "num_heads": 2, "num_layers": 3, "pooling": "mean", "exp_id": "exp_004"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring 3-layer architecture with embed=32, hidden=192 (divisible by 3 heads) - should be ~5.1MB", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_005"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring 4-layer architecture with weighted_mean pooling - should be ~5.4MB", "num_heads": 2, "num_layers": 4, "pooling": "weighted_mean", "exp_id": "exp_006"}
+{"cutoff_minutes": 10, "embed_dim": 64, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring 2-layer architecture with embed=64, hidden=128 - should be ~4.4MB", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_007"}

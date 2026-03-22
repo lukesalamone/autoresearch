@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best MRR@10 was 0.4813 achieved with embed_dim=64, hidden_dim=192, num_layers=2. We're currently at 0.4719 with embed_dim=32, hidden_dim=192, num_layers=2. The architecture search has plateaued with the current hyperparameters. I'll try to explore configurations that might push performance further while staying under 10MB. I'll test larger embed_dim with fewer layers, try pretrained initialization, and vary learning rates and pooling methods.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try larger embed_dim=64 with smaller hidden_dim=128 to see if performance improves while staying under 10MB", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_142"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test higher num_heads (3) with embed_dim=64 to see if more attention heads help performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_143"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with embed_dim=64 to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_144"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with embed_dim=64 to see if it pushes performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_145"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try pretrained initialization with current best architecture to see if it helps convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_146"}

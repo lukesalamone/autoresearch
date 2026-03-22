@@ -1,0 +1,12 @@
+Analysis:
+Based on the results, the current best configuration (exp_104) achieves 0.4721 MRR@10 with embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, lr=5e-5, infonce_temp=0.01. The model size is 3.20MB, well under the 10MB target. However, training has plateaued. I'll try to improve performance by:
+1. Fixing and improving the hybrid loss function
+2. Adding a learned post-encoder projection head to better decouple transformer and embedding dimensions
+3. Testing different pooling strategies and temperature settings
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Fix hybrid loss implementation to properly regularize embeddings and test with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_106"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Test smaller hidden dimension with 2 heads to reduce model size and potentially improve generalization", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_107"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with current best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_108"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "infonce_temp": 0.05, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test higher InfoNCE temperature (0.05) with current best architecture to see if it helps with generalization", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_109"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate with current best architecture to see if it improves convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_110"}

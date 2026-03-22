@@ -1,0 +1,9 @@
+Analysis:
+Based on previous results, the best performance was achieved with pretrained initialization (exp_001). The factorized embedding approach works well, with exp_002 showing promising results at ~2.5MB. I'll explore larger hidden dimensions (192, 256) with smaller embed_dims (32, 48) to see if we can get better performance without exceeding the 10MB limit. I'll also test weighted_mean pooling and try different learning rates to optimize performance.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring larger hidden_dim (192) with smaller embed (32) and 3 layers - should be ~5.5MB", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_007"}
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring larger hidden_dim (192) with embed=48 and 2 layers - should be ~6.2MB", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_008"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring largest hidden_dim (256) with embed=32 and 2 layers - should be ~7.4MB", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_009"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Testing weighted_mean pooling with 3-layer model (embed=32, hidden=192) - should be ~5.5MB", "num_heads": 3, "num_layers": 3, "pooling": "weighted_mean", "exp_id": "exp_010"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 0.0001, "notes": "Testing higher LR (1e-4) with 4-layer model (embed=32, hidden=128) - should be ~5.1MB", "num_heads": 2, "num_layers": 4, "pooling": "mean", "exp_id": "exp_011"}

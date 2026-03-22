@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best MRR@10 was 0.4488 achieved with embed=48, hidden=192, layers=2, heads=3. The model size was ~4.13MB. Several experiments have plateaued around 0.42-0.43. I'll focus on exploiting this architecture with different hyperparameters, particularly trying weighted_mean pooling which might give better results than mean, and varying learning rates. I'll also try the init_pretrained option as a potential better starting point.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try weighted_mean pooling with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_023"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try higher learning rate with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_024"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 2e-05, "notes": "Try lower learning rate with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_025"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try init_pretrained with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_026"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try smaller embed_dim with best hidden_dim so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_027"}

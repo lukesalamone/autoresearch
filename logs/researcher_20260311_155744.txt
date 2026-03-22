@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the current best configuration (exp_112) with MRR@10=0.4850 has plateaued. The architecture is quite small (3.2MB) and we're at the 10MB limit. I want to try a few experiments to see if we can push performance further. First, I'll fix the hybrid loss implementation to properly regularize embeddings, then try a few variations with slightly larger hidden dimensions and different learning rates.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Try larger hidden dimension (256) with 4 heads to see if we can improve performance", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_114"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0002, "notes": "Test higher learning rate (0.0002) with current best architecture to see if it can push performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_115"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with current best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_116"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.0001, "lr": 5e-05, "notes": "Test hybrid loss with L2 regularization on embeddings for better generalization", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_117"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "infonce_temp": 0.01, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test lower InfoNCE temperature (0.01) to create sharper distribution over in-batch negatives", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_118"}

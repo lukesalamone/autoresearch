@@ -1,0 +1,14 @@
+Analysis:
+Based on the results, I've identified that the current best configuration (embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384, pooling=mean, lr=5e-5) achieves ~0.4689 MRR@10. The architecture has plateaued and I want to explore:
+1. Larger embedding dimensions (48, 64) to see if we can improve performance
+2. Try weighted_mean pooling to see if it can outperform mean pooling
+3. Try a higher learning rate (1e-4) to potentially break the convergence plateau
+4. Try a slightly more complex architecture (3 layers) to see if it helps
+I'll focus on configurations that stay under 10MB and use the best-performing hyperparameters as a baseline.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test larger embedding dimension (48) with best intermediate dimension and learning rate", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_074"}
+{"cutoff_minutes": 10, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test larger embedding dimension (64) with best intermediate dimension and learning rate", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_075"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted_mean pooling with best architecture and learning rate", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_076"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test 3 layers with higher learning rate to see if we can break plateau", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_077"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Test increased hidden_dim and num_heads to see if we can improve performance", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_078"}

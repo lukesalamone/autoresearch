@@ -1,0 +1,28 @@
+Analysis:
+The best MRR@10 so far is 0.4681 (exp_024, exp_028), achieved with a 2-layer model (embed=48, hidden=192, heads=3, intermediate=384) using mean pooling and lr=0.0001. The model size was 4.13MB. 
+
+There's been some exploration of larger hidden_dim (256) and embed_dim (64), but they're hitting the 10MB limit. The current best architecture is quite stable, so I'll focus on fine-tuning the learning rate, pooling strategy, and potentially adding a projection head to improve performance without increasing model size.
+
+The last few runs have shown that:
+- Mean pooling is generally better than weighted_mean (exp_024 vs 030, 041)
+- lr=0.0001 is better than lr=0.0002 or 0.00005 (exp_024 vs 029, 034, 039)
+- 2-layer models are more stable than 3-layer (exp_033 vs 024, 028)
+- Smaller embed_dim (32) works well with hidden=192 (exp_036 vs 024)
+
+I'll now try a few variations:
+1. A 2-layer model with embed=32, hidden=192, lr=0.00015 (a bit higher than 0.0001)
+2. A 2-layer model with embed=32, hidden=192, lr=0.00005 (lower learning rate)
+3. A 2-layer model with embed=32, hidden=192, pooling=weighted_mean (to see if it's better than mean)
+4. A 2-layer model with embed=48, hidden=192, lr=0.0001, pooling=weighted_mean (to see if this improves on best mean)
+5. A 2-layer model with embed=32, hidden=192, lr=0.0001, pooling=weighted_mean, intermediate=512 (larger FFN)
+6. A 2-layer model with embed=48, hidden=192, lr=0.0001, pooling=weighted_mean, intermediate=512 (larger FFN)
+7. A 2-layer model with embed=32, hidden=192, lr=0.0001, pooling=mean, intermediate=512 (larger FFN)
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.00015, "notes": "Try higher learning rate (1.5e-4) with best architecture (embed=32, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_043"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try lower learning rate (5e-5) with best architecture (embed=32, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_044"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try weighted_mean pooling with best architecture (embed=32, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_045"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try weighted_mean pooling with best architecture (embed=48, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_046"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 512, "lr": 0.0001, "notes": "Try weighted_mean pooling with larger FFN (512) and best architecture (embed=32, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_047"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 512, "lr": 0.0001, "notes": "Try weighted_mean pooling with larger FFN (512) and best architecture (embed=48, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_048"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 512, "lr": 0.0001, "notes": "Try larger FFN (512) with best architecture (embed=32, hidden=192)", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_049"}

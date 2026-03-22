@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, we've identified a strong baseline with 0.4689 MRR@10 using 32-dim embeddings, 192-hidden, 2-layer transformer. The hybrid loss with L2 regularization shows promise but needs refinement. The best architecture seems to be in the 32-48 embed_dim range with 192 hidden_dim. I'll focus on exploring learning rate and intermediate dimension variations while keeping the current architecture and loss function.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test current best architecture with higher intermediate dimension (384) to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_069"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 2e-05, "notes": "Test lower learning rate (2e-5) with best architecture and higher intermediate dimension", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_070"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with best architecture and higher intermediate dimension", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_071"}
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test larger embedding dimension (48) with best intermediate dimension to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_072"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test weighted mean pooling with best architecture and higher intermediate dimension", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_073"}

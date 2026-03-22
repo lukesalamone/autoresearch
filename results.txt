@@ -1,0 +1,2024 @@
+
+============================================================
+exp_id:             exp_001
+timestamp:          2026-03-10T23:39:01.875892
+mrr@10:             0.4519
+trajectory:         improving
+wall_time_s:        120
+steps:              20780
+model_size_mb_fp16: 8.33
+hyperparams:        {"embed_dim": 128, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": true}
+notes:              seed: pretrained init (L-2_H-128), mean pool, InfoNCE baseline
+
+============================================================
+exp_id:             exp_002
+timestamp:          2026-03-10T23:41:13.877372
+mrr@10:             0.4103
+trajectory:         improving
+wall_time_s:        120
+steps:              21520
+model_size_mb_fp16: 2.50
+hyperparams:        {"embed_dim": 32, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              seed: factorized embed=32, hidden=128, 2L from scratch — ~2.6MB
+
+============================================================
+exp_id:             exp_003
+timestamp:          2026-03-10T23:59:25.359735
+mrr@10:             0.4051
+trajectory:         improving
+wall_time_s:        120
+steps:              17263
+model_size_mb_fp16: 2.75
+hyperparams:        {"embed_dim": 32, "hidden_dim": 128, "num_layers": 3, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 3-layer architecture with embed=32, hidden=128 - should be ~3.2MB
+
+============================================================
+exp_id:             exp_004
+timestamp:          2026-03-11T00:01:36.417675
+mrr@10:             0.4121
+trajectory:         improving
+wall_time_s:        120
+steps:              17096
+model_size_mb_fp16: 3.69
+hyperparams:        {"embed_dim": 48, "hidden_dim": 128, "num_layers": 3, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 3-layer architecture with embed=48, hidden=128 - should be ~4.1MB
+
+============================================================
+exp_id:             exp_005
+timestamp:          2026-03-11T00:03:57.720592
+mrr@10:             0.4252
+trajectory:         plateaued
+wall_time_s:        120
+steps:              21932
+model_size_mb_fp16: 4.37
+hyperparams:        {"embed_dim": 64, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger embed_dim (64) with fewer layers (2) - should be ~4.3MB
+
+============================================================
+exp_id:             exp_006
+timestamp:          2026-03-11T00:06:09.184439
+mrr@10:             0.4047
+trajectory:         improving
+wall_time_s:        120
+steps:              13616
+model_size_mb_fp16: 3.01
+hyperparams:        {"embed_dim": 32, "hidden_dim": 128, "num_layers": 4, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 4-layer architecture with embed=32 - should be ~5.1MB
+
+============================================================
+exp_id:             exp_007
+timestamp:          2026-03-11T00:08:31.280837
+mrr@10:             0.4150
+trajectory:         improving
+wall_time_s:        120
+steps:              12115
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger hidden_dim (192) with smaller embed (32) and 3 layers - should be ~5.5MB
+
+============================================================
+exp_id:             exp_008
+timestamp:          2026-03-11T00:10:42.827373
+mrr@10:             0.4488
+trajectory:         improving
+wall_time_s:        120
+steps:              16945
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger hidden_dim (192) with embed=48 and 2 layers - should be ~6.2MB
+
+============================================================
+exp_id:             exp_009
+timestamp:          2026-03-11T00:13:04.198963
+mrr@10:             0.4254
+trajectory:         improving
+wall_time_s:        120
+steps:              11997
+model_size_mb_fp16: 5.08
+hyperparams:        {"embed_dim": 48, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger hidden_dim (256) with 2 layers - should be ~6.3MB
+
+============================================================
+exp_id:             exp_010
+timestamp:          2026-03-11T00:15:15.828412
+mrr@10:             0.4379
+trajectory:         improving
+wall_time_s:        120
+steps:              16730
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger embed_dim (64) with 2 layers - should be ~5.4MB
+
+============================================================
+exp_id:             exp_011
+timestamp:          2026-03-11T00:17:38.054706
+mrr@10:             0.4150
+trajectory:         improving
+wall_time_s:        120
+steps:              12146
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 3-layer with embed=32, hidden=192 - should be ~5.5MB, following successful pattern
+
+============================================================
+exp_id:             exp_012
+timestamp:          2026-03-11T00:19:49.668665
+mrr@10:             0.4284
+trajectory:         improving
+wall_time_s:        120
+steps:              11993
+model_size_mb_fp16: 6.02
+hyperparams:        {"embed_dim": 64, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=64, hidden=256 - should be ~6.3MB, testing larger embed
+
+============================================================
+exp_id:             exp_013
+timestamp:          2026-03-11T00:22:11.224213
+mrr@10:             0.4158
+trajectory:         improving
+wall_time_s:        120
+steps:              12018
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger hidden_dim with small embed (32) and 2 layers - should be ~6.3MB
+
+============================================================
+exp_id:             exp_014
+timestamp:          2026-03-11T00:24:22.239836
+mrr@10:             0.4254
+trajectory:         improving
+wall_time_s:        120
+steps:              12032
+model_size_mb_fp16: 5.08
+hyperparams:        {"embed_dim": 48, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring larger hidden_dim with embed=48 and 2 layers - should be ~6.3MB
+
+============================================================
+exp_id:             exp_015
+timestamp:          2026-03-11T00:26:44.778987
+mrr@10:             0.4158
+trajectory:         improving
+wall_time_s:        120
+steps:              12042
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_016
+timestamp:          2026-03-11T00:28:56.332952
+mrr@10:             0.4254
+trajectory:         improving
+wall_time_s:        120
+steps:              12007
+model_size_mb_fp16: 5.08
+hyperparams:        {"embed_dim": 48, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=48, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_017
+timestamp:          2026-03-11T00:31:19.412315
+mrr@10:             0.4158
+trajectory:         improving
+wall_time_s:        120
+steps:              12053
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_018
+timestamp:          2026-03-11T00:33:30.929670
+mrr@10:             0.4208
+trajectory:         improving
+wall_time_s:        120
+steps:              8332
+model_size_mb_fp16: 5.15
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 3, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 3-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_019
+timestamp:          2026-03-11T00:35:54.039555
+mrr@10:             0.4171
+trajectory:         improving
+wall_time_s:        120
+steps:              16925
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=32, hidden=192 - should be ~6.2MB, following successful pattern
+
+============================================================
+exp_id:             exp_020
+timestamp:          2026-03-11T00:38:04.958556
+mrr@10:             0.4158
+trajectory:         improving
+wall_time_s:        120
+steps:              12011
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_021
+timestamp:          2026-03-11T00:40:28.800506
+mrr@10:             0.4158
+trajectory:         improving
+wall_time_s:        120
+steps:              12144
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 2-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_022
+timestamp:          2026-03-11T00:42:39.632307
+mrr@10:             0.4208
+trajectory:         improving
+wall_time_s:        120
+steps:              8562
+model_size_mb_fp16: 5.15
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 3, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 2.0, "init_pretrained": false}
+notes:              Exploring 3-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim
+
+============================================================
+exp_id:             exp_023
+timestamp:          2026-03-11T00:57:46.190420
+mrr@10:             0.4428
+trajectory:         plateaued
+wall_time_s:        300
+steps:              42126
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with best architecture so far
+
+============================================================
+exp_id:             exp_024
+timestamp:          2026-03-11T01:02:57.018846
+mrr@10:             0.4681
+trajectory:         improving
+wall_time_s:        300
+steps:              43148
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try higher learning rate with best architecture so far
+
+============================================================
+exp_id:             exp_025
+timestamp:          2026-03-11T01:08:07.906140
+mrr@10:             0.4399
+trajectory:         diverging
+wall_time_s:        300
+steps:              43101
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try lower learning rate with best architecture so far
+
+============================================================
+exp_id:             exp_027
+timestamp:          2026-03-11T01:13:21.576481
+mrr@10:             0.4427
+trajectory:         improving
+wall_time_s:        300
+steps:              43229
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try smaller embed_dim with best hidden_dim so far
+
+============================================================
+exp_id:             exp_028
+timestamp:          2026-03-11T01:18:42.749392
+mrr@10:             0.4681
+trajectory:         improving
+wall_time_s:        300
+steps:              42971
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try higher learning rate with best architecture so far
+
+============================================================
+exp_id:             exp_029
+timestamp:          2026-03-11T01:23:53.452515
+mrr@10:             0.4399
+trajectory:         diverging
+wall_time_s:        300
+steps:              43168
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try lower learning rate with best architecture so far
+
+============================================================
+exp_id:             exp_030
+timestamp:          2026-03-11T01:29:05.006680
+mrr@10:             0.4428
+trajectory:         plateaued
+wall_time_s:        300
+steps:              41996
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with best architecture so far
+
+============================================================
+exp_id:             exp_031
+timestamp:          2026-03-11T01:34:16.660570
+mrr@10:             0.4371
+trajectory:         plateaued
+wall_time_s:        300
+steps:              63860
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 32, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try smaller batch size with best architecture so far
+
+============================================================
+exp_id:             exp_032
+timestamp:          2026-03-11T01:39:27.334724
+mrr@10:             0.4378
+trajectory:         plateaued
+wall_time_s:        300
+steps:              24499
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 128, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try larger batch size with best architecture so far
+
+============================================================
+exp_id:             exp_033
+timestamp:          2026-03-11T01:44:49.637469
+mrr@10:             0.4399
+trajectory:         improving
+wall_time_s:        300
+steps:              30933
+model_size_mb_fp16: 4.70
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try 3-layer model with best architecture so far
+
+============================================================
+exp_id:             exp_034
+timestamp:          2026-03-11T01:50:00.813738
+mrr@10:             0.4609
+trajectory:         improving
+wall_time_s:        300
+steps:              43094
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0002, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try higher learning rate (2e-4) with best architecture
+
+============================================================
+exp_id:             exp_036
+timestamp:          2026-03-11T01:55:14.913339
+mrr@10:             0.4548
+trajectory:         improving
+wall_time_s:        300
+steps:              43288
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try smaller embed_dim (32) with best hidden_dim (192)
+
+============================================================
+exp_id:             exp_037
+timestamp:          2026-03-11T02:00:25.922164
+mrr@10:             0.4577
+trajectory:         improving
+wall_time_s:        300
+steps:              42912
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try larger embed_dim (64) to see if it fits in 10MB budget
+
+============================================================
+exp_id:             exp_038
+timestamp:          2026-03-11T02:05:51.414850
+mrr@10:             0.4657
+trajectory:         improving
+wall_time_s:        300
+steps:              43136
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.00015, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try higher learning rate (1.5e-4) with best architecture
+
+============================================================
+exp_id:             exp_039
+timestamp:          2026-03-11T02:11:02.884791
+mrr@10:             0.4420
+trajectory:         improving
+wall_time_s:        300
+steps:              42977
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try lower learning rate (5e-5) with best architecture
+
+============================================================
+exp_id:             exp_040
+timestamp:          2026-03-11T02:16:13.664493
+mrr@10:             0.4577
+trajectory:         improving
+wall_time_s:        300
+steps:              42926
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try larger embed_dim (64) with best hidden_dim (192) - should be ~5.4MB
+
+============================================================
+exp_id:             exp_041
+timestamp:          2026-03-11T02:21:24.998014
+mrr@10:             0.4611
+trajectory:         improving
+wall_time_s:        300
+steps:              42101
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with best architecture and lr=0.0001
+
+============================================================
+exp_id:             exp_042
+timestamp:          2026-03-11T02:26:36.272563
+mrr@10:             0.4552
+trajectory:         improving
+wall_time_s:        300
+steps:              30774
+model_size_mb_fp16: 5.08
+hyperparams:        {"embed_dim": 48, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try larger hidden_dim (256) with 2 layers - should be ~6.3MB
+
+============================================================
+exp_id:             exp_043
+timestamp:          2026-03-11T02:32:05.729750
+mrr@10:             0.4681
+trajectory:         improving
+wall_time_s:        300
+steps:              43280
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.00015, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try higher learning rate (1.5e-4) with best architecture (embed=32, hidden=192)
+
+============================================================
+exp_id:             exp_044
+timestamp:          2026-03-11T02:37:16.321021
+mrr@10:             0.4427
+trajectory:         improving
+wall_time_s:        300
+steps:              43302
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try lower learning rate (5e-5) with best architecture (embed=32, hidden=192)
+
+============================================================
+exp_id:             exp_045
+timestamp:          2026-03-11T02:42:27.517866
+mrr@10:             0.4492
+trajectory:         improving
+wall_time_s:        300
+steps:              42212
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with best architecture (embed=32, hidden=192)
+
+============================================================
+exp_id:             exp_046
+timestamp:          2026-03-11T02:47:38.521110
+mrr@10:             0.4611
+trajectory:         improving
+wall_time_s:        300
+steps:              42054
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with best architecture (embed=48, hidden=192)
+
+============================================================
+exp_id:             exp_047
+timestamp:          2026-03-11T02:52:49.249240
+mrr@10:             0.4427
+trajectory:         diverging
+wall_time_s:        300
+steps:              39553
+model_size_mb_fp16: 3.38
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 512, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with larger FFN (512) and best architecture (embed=32, hidden=192)
+
+============================================================
+exp_id:             exp_048
+timestamp:          2026-03-11T02:58:00.666021
+mrr@10:             0.4550
+trajectory:         improving
+wall_time_s:        300
+steps:              39656
+model_size_mb_fp16: 4.32
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 512, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try weighted_mean pooling with larger FFN (512) and best architecture (embed=48, hidden=192)
+
+============================================================
+exp_id:             exp_049
+timestamp:          2026-03-11T03:03:11.925647
+mrr@10:             0.4501
+trajectory:         improving
+wall_time_s:        300
+steps:              40701
+model_size_mb_fp16: 3.38
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 512, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false}
+notes:              Try larger FFN (512) with best architecture (embed=32, hidden=192)
+
+============================================================
+exp_id:             exp_050
+timestamp:          2026-03-11T03:09:18.843236
+mrr@10:             0.4548
+trajectory:         improving
+wall_time_s:        300
+steps:              43212
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with L2 regularization on embeddings (l2_reg_weight=0.0001) with best architecture
+
+============================================================
+exp_id:             exp_051
+timestamp:          2026-03-11T03:14:29.576527
+mrr@10:             0.4548
+trajectory:         improving
+wall_time_s:        300
+steps:              43325
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with stronger L2 regularization (l2_reg_weight=0.001) with best architecture
+
+============================================================
+exp_id:             exp_052
+timestamp:          2026-03-11T03:19:40.529924
+mrr@10:             0.4548
+trajectory:         improving
+wall_time_s:        300
+steps:              43199
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with L2 regularization (l2_reg_weight=0.00001) with best architecture
+
+============================================================
+exp_id:             exp_053
+timestamp:          2026-03-11T03:24:52.103426
+mrr@10:             0.4681
+trajectory:         improving
+wall_time_s:        300
+steps:              43154
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with L2 regularization (l2_reg_weight=0.0001) on larger embed_dim architecture
+
+============================================================
+exp_id:             exp_054
+timestamp:          2026-03-11T03:30:02.864984
+mrr@10:             0.4492
+trajectory:         improving
+wall_time_s:        300
+steps:              42152
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 5.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with L2 regularization on weighted_mean pooling with best architecture
+
+============================================================
+exp_id:             exp_055
+timestamp:          2026-03-11T03:40:25.188041
+mrr@10:             0.4625
+trajectory:         improving
+wall_time_s:        600
+steps:              62220
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try 3 layers with best architecture and lr=0.0001
+
+============================================================
+exp_id:             exp_056
+timestamp:          2026-03-11T03:50:35.901498
+mrr@10:             0.4638
+trajectory:         diverging
+wall_time_s:        600
+steps:              84574
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try weighted_mean pooling with best architecture and lr=0.0001
+
+============================================================
+exp_id:             exp_057
+timestamp:          2026-03-11T04:00:46.738920
+mrr@10:             0.4588
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86637
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0002, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate (2e-4) with best architecture
+
+============================================================
+exp_id:             exp_058
+timestamp:          2026-03-11T04:10:57.540346
+mrr@10:             0.4689
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86524
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try lower learning rate (5e-5) with best architecture
+
+============================================================
+exp_id:             exp_059
+timestamp:          2026-03-11T04:21:23.536657
+mrr@10:             0.4588
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86554
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0002, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate (2e-4) with best architecture to see if we can get better convergence
+
+============================================================
+exp_id:             exp_060
+timestamp:          2026-03-11T04:31:34.872519
+mrr@10:             0.4625
+trajectory:         improving
+wall_time_s:        600
+steps:              62230
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try 3 layers with best architecture and lr=0.0001 to see if adding depth helps
+
+============================================================
+exp_id:             exp_061
+timestamp:          2026-03-11T04:41:45.611544
+mrr@10:             0.4638
+trajectory:         diverging
+wall_time_s:        600
+steps:              84571
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try weighted_mean pooling with best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_063
+timestamp:          2026-03-11T04:52:00.077571
+mrr@10:             0.4688
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86187
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0001}
+notes:              Try hybrid loss with L2 regularization on embeddings with best architecture
+
+============================================================
+exp_id:             exp_064
+timestamp:          2026-03-11T05:02:22.283841
+mrr@10:             0.4581
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86693
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.00015, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate (1.5e-4) with best architecture to see if we can get better convergence
+
+============================================================
+exp_id:             exp_065
+timestamp:          2026-03-11T05:12:33.166820
+mrr@10:             0.4689
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86717
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try lower learning rate (5e-5) with best architecture to see if we can get better convergence
+
+============================================================
+exp_id:             exp_066
+timestamp:          2026-03-11T05:22:44.518818
+mrr@10:             0.4638
+trajectory:         diverging
+wall_time_s:        600
+steps:              84761
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try weighted_mean pooling with best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_067
+timestamp:          2026-03-11T05:32:55.537541
+mrr@10:             0.4682
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86256
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0001}
+notes:              Test improved hybrid loss with better L2 regularization implementation on best architecture
+
+============================================================
+exp_id:             exp_068
+timestamp:          2026-03-11T05:43:06.908888
+mrr@10:             0.4557
+trajectory:         diverging
+wall_time_s:        600
+steps:              86258
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.001}
+notes:              Test improved hybrid loss with stronger L2 regularization on best architecture
+
+============================================================
+exp_id:             exp_069
+timestamp:          2026-03-11T05:53:28.495737
+mrr@10:             0.4663
+trajectory:         diverging
+wall_time_s:        600
+steps:              86722
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test current best architecture with higher intermediate dimension (384) to see if it improves performance
+
+============================================================
+exp_id:             exp_070
+timestamp:          2026-03-11T06:03:39.610888
+mrr@10:             0.4440
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86771
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower learning rate (2e-5) with best architecture and higher intermediate dimension
+
+============================================================
+exp_id:             exp_071
+timestamp:          2026-03-11T06:13:50.442476
+mrr@10:             0.4663
+trajectory:         diverging
+wall_time_s:        600
+steps:              86798
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with best architecture and higher intermediate dimension
+
+============================================================
+exp_id:             exp_072
+timestamp:          2026-03-11T06:24:01.717799
+mrr@10:             0.4533
+trajectory:         plateaued
+wall_time_s:        600
+steps:              86256
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger embedding dimension (48) with best intermediate dimension to see if it improves performance
+
+============================================================
+exp_id:             exp_073
+timestamp:          2026-03-11T06:34:13.012366
+mrr@10:             0.4638
+trajectory:         diverging
+wall_time_s:        600
+steps:              84599
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with best architecture and higher intermediate dimension
+
+============================================================
+exp_id:             exp_074
+timestamp:          2026-03-11T06:44:35.916144
+mrr@10:             0.4573
+trajectory:         improving
+wall_time_s:        600
+steps:              86361
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger embedding dimension (48) with best intermediate dimension and learning rate
+
+============================================================
+exp_id:             exp_075
+timestamp:          2026-03-11T06:54:48.422932
+mrr@10:             0.4557
+trajectory:         plateaued
+wall_time_s:        601
+steps:              86196
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger embedding dimension (64) with best intermediate dimension and learning rate
+
+============================================================
+exp_id:             exp_076
+timestamp:          2026-03-11T07:04:59.965218
+mrr@10:             0.4668
+trajectory:         diverging
+wall_time_s:        600
+steps:              84771
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted_mean pooling with best architecture and learning rate
+
+============================================================
+exp_id:             exp_077
+timestamp:          2026-03-11T07:15:11.500218
+mrr@10:             0.4625
+trajectory:         improving
+wall_time_s:        600
+steps:              62293
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test 3 layers with higher learning rate to see if we can break plateau
+
+============================================================
+exp_id:             exp_078
+timestamp:          2026-03-11T07:25:22.857109
+mrr@10:             0.4573
+trajectory:         improving
+wall_time_s:        600
+steps:              61527
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 10.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test increased hidden_dim and num_heads to see if we can improve performance
+
+============================================================
+exp_id:             exp_079
+timestamp:          2026-03-11T07:41:56.549831
+mrr@10:             0.4581
+trajectory:         plateaued
+wall_time_s:        900
+steps:              92368
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger hidden_dim (256) with 4 heads to see if we can break the plateau
+
+============================================================
+exp_id:             exp_080
+timestamp:          2026-03-11T07:57:07.410252
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127111
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try weighted_mean pooling with best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_081
+timestamp:          2026-03-11T08:12:19.477889
+mrr@10:             0.4711
+trajectory:         plateaued
+wall_time_s:        901
+steps:              130600
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test different temperature for InfoNCE loss to see if we can improve performance
+
+============================================================
+exp_id:             exp_082
+timestamp:          2026-03-11T08:24:45.443712
+mrr@10:             0.4552
+trajectory:         plateaued
+wall_time_s:        735
+steps:              105942
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.250316135088603, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embedding dimension (48) to see if it improves performance
+
+============================================================
+exp_id:             exp_083
+timestamp:          2026-03-11T08:40:06.956512
+mrr@10:             0.4703
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127339
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower learning rate (2e-5) with best architecture to see if it improves convergence
+
+============================================================
+exp_id:             exp_084
+timestamp:          2026-03-11T08:55:17.935317
+mrr@10:             0.4617
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127238
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with best architecture to see if it breaks plateau
+
+============================================================
+exp_id:             exp_085
+timestamp:          2026-03-11T09:10:28.850856
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127451
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test different InfoNCE temperature (0.1) with best architecture
+
+============================================================
+exp_id:             exp_086
+timestamp:          2026-03-11T09:22:56.349889
+mrr@10:             0.4674
+trajectory:         plateaued
+wall_time_s:        737
+steps:              104274
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.276524901390076, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with L2 regularization on embeddings with best architecture
+
+============================================================
+exp_id:             exp_087
+timestamp:          2026-03-11T09:38:19.234972
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              130489
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with current architecture to see if it breaks plateau
+
+============================================================
+exp_id:             exp_088
+timestamp:          2026-03-11T09:53:30.245355
+mrr@10:             0.4685
+trajectory:         plateaued
+wall_time_s:        900
+steps:              130471
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test current best architecture with longer training time to confirm stability
+
+============================================================
+exp_id:             exp_089
+timestamp:          2026-03-11T10:08:41.212193
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127301
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted_mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_090
+timestamp:          2026-03-11T10:21:07.244646
+mrr@10:             0.4731
+trajectory:         plateaued
+wall_time_s:        735
+steps:              106965
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.252288019657135, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Implement MarginMSELoss training with current architecture to better align with goal specification
+
+============================================================
+exp_id:             exp_091
+timestamp:          2026-03-11T10:36:38.890446
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              129845
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Add a learned post-encoder projection head to decouple transformer hidden size from embedding size. This should allow us to use a smaller hidden_dim and project to a larger output for better dot-product scoring.
+
+============================================================
+exp_id:             exp_092
+timestamp:          2026-03-11T10:51:50.290756
+mrr@10:             0.4597
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129769
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0001}
+notes:              Test hybrid loss function with InfoNCE + L2 regularization on embeddings. This may help with generalization and avoid overfitting.
+
+============================================================
+exp_id:             exp_093
+timestamp:          2026-03-11T11:07:01.837896
+mrr@10:             0.4644
+trajectory:         improving
+wall_time_s:        900
+steps:              130626
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.01, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try a lower InfoNCE temperature (0.01) to create a sharper distribution over in-batch negatives. This may help with harder negatives.
+
+============================================================
+exp_id:             exp_094
+timestamp:          2026-03-11T11:19:16.867926
+mrr@10:             0.4592
+trajectory:         plateaued
+wall_time_s:        726
+steps:              98025
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 0.5, "cutoff_minutes": 12.090217181046803, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Reduce dataset fraction to 50% to see if training with less data can improve generalization.
+
+============================================================
+exp_id:             exp_095
+timestamp:          2026-03-11T11:34:38.442914
+mrr@10:             0.4641
+trajectory:         improving
+wall_time_s:        900
+steps:              130619
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Confirm current best architecture with longer training time
+
+============================================================
+exp_id:             exp_096
+timestamp:          2026-03-11T11:49:50.699544
+mrr@10:             0.4711
+trajectory:         plateaued
+wall_time_s:        901
+steps:              130600
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower learning rate with current best architecture
+
+============================================================
+exp_id:             exp_097
+timestamp:          2026-03-11T12:05:01.654195
+mrr@10:             0.4617
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127123
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted_mean pooling with current best architecture
+
+============================================================
+exp_id:             exp_098
+timestamp:          2026-03-11T12:17:27.627084
+mrr@10:             0.4677
+trajectory:         diverging
+wall_time_s:        735
+steps:              106453
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.01, "dataset_fraction": 1.0, "cutoff_minutes": 12.25309990644455, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower InfoNCE temperature with current best architecture
+
+============================================================
+exp_id:             exp_099
+timestamp:          2026-03-11T12:32:48.125133
+mrr@10:             0.4474
+trajectory:         plateaued
+wall_time_s:        900
+steps:              165727
+model_size_mb_fp16: 2.50
+hyperparams:        {"embed_dim": 32, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Add post-encoder projection head with 32-dim output, hidden=128, lr=5e-5
+
+============================================================
+exp_id:             exp_100
+timestamp:          2026-03-11T12:47:59.015915
+mrr@10:             0.4558
+trajectory:         improving
+wall_time_s:        900
+steps:              165152
+model_size_mb_fp16: 3.44
+hyperparams:        {"embed_dim": 48, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Add post-encoder projection head with 48-dim output, hidden=128, lr=5e-5
+
+============================================================
+exp_id:             exp_101
+timestamp:          2026-03-11T13:03:10.492561
+mrr@10:             0.4563
+trajectory:         plateaued
+wall_time_s:        900
+steps:              165271
+model_size_mb_fp16: 4.37
+hyperparams:        {"embed_dim": 64, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Add post-encoder projection head with 64-dim output, hidden=128, lr=5e-5
+
+============================================================
+exp_id:             exp_102
+timestamp:          2026-03-11T13:23:33.314300
+mrr@10:             0.4638
+trajectory:         plateaued
+wall_time_s:        1200
+steps:              174178
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 20.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Confirm best architecture (exp_090) with longer training time (20min) to verify stability
+
+============================================================
+exp_id:             exp_103
+timestamp:          2026-03-11T13:38:44.613182
+mrr@10:             0.4576
+trajectory:         diverging
+wall_time_s:        900
+steps:              129241
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0001}
+notes:              Test improved hybrid loss with L2 regularization on embeddings for better generalization
+
+============================================================
+exp_id:             exp_104
+timestamp:          2026-03-11T13:53:55.321060
+mrr@10:             0.4721
+trajectory:         improving
+wall_time_s:        900
+steps:              130580
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.01, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower InfoNCE temperature (0.01) to create sharper distribution over in-batch negatives
+
+============================================================
+exp_id:             exp_105
+timestamp:          2026-03-11T14:01:22.066433
+mrr@10:             0.4575
+trajectory:         plateaued
+wall_time_s:        435
+steps:              79153
+model_size_mb_fp16: 2.50
+hyperparams:        {"embed_dim": 32, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 7.253043480714163, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try smaller hidden dimension (128) with 2 heads to reduce model size and potentially improve generalization
+
+============================================================
+exp_id:             exp_106
+timestamp:          2026-03-11T14:16:44.202723
+mrr@10:             0.4685
+trajectory:         plateaued
+wall_time_s:        900
+steps:              130297
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Fix hybrid loss implementation to properly regularize embeddings and test with current best architecture
+
+============================================================
+exp_id:             exp_107
+timestamp:          2026-03-11T14:31:55.420049
+mrr@10:             0.4494
+trajectory:         plateaued
+wall_time_s:        900
+steps:              164459
+model_size_mb_fp16: 2.50
+hyperparams:        {"embed_dim": 32, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test smaller hidden dimension with 2 heads to reduce model size and potentially improve generalization
+
+============================================================
+exp_id:             exp_108
+timestamp:          2026-03-11T14:47:06.425615
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127546
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_109
+timestamp:          2026-03-11T14:59:32.929226
+mrr@10:             0.4731
+trajectory:         plateaued
+wall_time_s:        736
+steps:              106409
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.260310701529185, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher InfoNCE temperature (0.05) with current best architecture to see if it helps with generalization
+
+============================================================
+exp_id:             exp_110
+timestamp:          2026-03-11T15:14:55.053761
+mrr@10:             0.4685
+trajectory:         plateaued
+wall_time_s:        900
+steps:              130399
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Confirm best architecture with pretrained initialization
+
+============================================================
+exp_id:             exp_111
+timestamp:          2026-03-11T15:30:06.392459
+mrr@10:             0.4468
+trajectory:         diverging
+wall_time_s:        900
+steps:              161944
+model_size_mb_fp16: 3.44
+hyperparams:        {"embed_dim": 48, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embed_dim with smaller hidden_dim to see if we can improve performance
+
+============================================================
+exp_id:             exp_112
+timestamp:          2026-03-11T15:45:18.102745
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              130583
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate with current best architecture
+
+============================================================
+exp_id:             exp_113
+timestamp:          2026-03-11T15:57:44.345986
+mrr@10:             0.4850
+trajectory:         plateaued
+wall_time_s:        735
+steps:              60067
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 128, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.247124592463175, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger batch size with current best architecture
+
+============================================================
+exp_id:             exp_114
+timestamp:          2026-03-11T16:13:10.044990
+mrr@10:             0.4581
+trajectory:         plateaued
+wall_time_s:        900
+steps:              92382
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger hidden dimension (256) with 4 heads to see if we can improve performance
+
+============================================================
+exp_id:             exp_115
+timestamp:          2026-03-11T16:28:21.720379
+mrr@10:             0.4584
+trajectory:         plateaued
+wall_time_s:        900
+steps:              130419
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0002, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (0.0002) with current best architecture to see if it can push performance
+
+============================================================
+exp_id:             exp_116
+timestamp:          2026-03-11T16:43:32.451805
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127383
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_117
+timestamp:          2026-03-11T16:55:55.721698
+mrr@10:             0.4626
+trajectory:         diverging
+wall_time_s:        732
+steps:              104621
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.198566003640492, "init_pretrained": false, "l2_reg_weight": 0.0001}
+notes:              Test hybrid loss with L2 regularization on embeddings for better generalization
+
+============================================================
+exp_id:             exp_118
+timestamp:          2026-03-11T17:11:18.186772
+mrr@10:             0.4685
+trajectory:         plateaued
+wall_time_s:        900
+steps:              128917
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Fix hybrid loss implementation to properly regularize embeddings and test with current best architecture
+
+============================================================
+exp_id:             exp_119
+timestamp:          2026-03-11T17:26:29.906050
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              129823
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.05, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower warmup ratio with current best architecture to see if it helps convergence
+
+============================================================
+exp_id:             exp_120
+timestamp:          2026-03-11T17:41:40.760764
+mrr@10:             0.4747
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129950
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.02, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test even lower InfoNCE temperature to create sharper distribution over in-batch negatives
+
+============================================================
+exp_id:             exp_121
+timestamp:          2026-03-11T17:54:07.212800
+mrr@10:             0.4674
+trajectory:         plateaued
+wall_time_s:        735
+steps:              103751
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.249754997094472, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_122
+timestamp:          2026-03-11T18:09:30.153320
+mrr@10:             0.4667
+trajectory:         plateaued
+wall_time_s:        900
+steps:              93632
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test 3 layers with current best architecture to see if depth helps performance
+
+============================================================
+exp_id:             exp_123
+timestamp:          2026-03-11T18:24:41.606709
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127591
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_124
+timestamp:          2026-03-11T18:39:52.625479
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              130494
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with current best architecture to see if it pushes performance
+
+============================================================
+exp_id:             exp_125
+timestamp:          2026-03-11T18:52:18.725937
+mrr@10:             0.4680
+trajectory:         plateaued
+wall_time_s:        735
+steps:              106582
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.02, "dataset_fraction": 1.0, "cutoff_minutes": 12.24306590159734, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower InfoNCE temperature (0.02) to create sharper negatives with current best architecture
+
+============================================================
+exp_id:             exp_126
+timestamp:          2026-03-11T19:07:41.356273
+mrr@10:             0.4674
+trajectory:         plateaued
+wall_time_s:        900
+steps:              130515
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower learning rate (2e-5) with current best architecture to see if it helps convergence
+
+============================================================
+exp_id:             exp_127
+timestamp:          2026-03-11T19:22:53.002983
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              130586
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with current best architecture to see if it pushes performance
+
+============================================================
+exp_id:             exp_128
+timestamp:          2026-03-11T19:38:05.432991
+mrr@10:             0.4719
+trajectory:         plateaued
+wall_time_s:        901
+steps:              130600
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.02, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower InfoNCE temperature (0.02) with current best architecture to create sharper negatives
+
+============================================================
+exp_id:             exp_129
+timestamp:          2026-03-11T19:50:30.209155
+mrr@10:             0.4602
+trajectory:         plateaued
+wall_time_s:        733
+steps:              75607
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.2212584733963, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try slightly larger model (hidden_dim=256, num_heads=4) to see if performance improves while staying under 10MB
+
+============================================================
+exp_id:             exp_130
+timestamp:          2026-03-11T20:05:51.931219
+mrr@10:             0.4813
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129314
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger embed_dim=64 with 2 layers to see if increased capacity helps performance
+
+============================================================
+exp_id:             exp_131
+timestamp:          2026-03-11T20:21:02.667049
+mrr@10:             0.4667
+trajectory:         plateaued
+wall_time_s:        900
+steps:              92648
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test 3 layers with current best architecture to see if depth helps performance
+
+============================================================
+exp_id:             exp_132
+timestamp:          2026-03-11T20:36:14.662954
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126448
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_133
+timestamp:          2026-03-11T20:48:41.294492
+mrr@10:             0.4626
+trajectory:         diverging
+wall_time_s:        736
+steps:              105715
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.259613505999248, "init_pretrained": false, "l2_reg_weight": 0.0001}
+notes:              Test hybrid loss with L2 regularization on embeddings for better generalization
+
+============================================================
+exp_id:             exp_134
+timestamp:          2026-03-11T21:04:03.333204
+mrr@10:             0.4711
+trajectory:         plateaued
+wall_time_s:        900
+steps:              130750
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test hybrid loss with L2 regularization on embeddings to see if it improves generalization
+
+============================================================
+exp_id:             exp_135
+timestamp:          2026-03-11T21:19:15.060641
+mrr@10:             0.4627
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127563
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_136
+timestamp:          2026-03-11T21:34:26.104414
+mrr@10:             0.4699
+trajectory:         improving
+wall_time_s:        900
+steps:              130397
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.05, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower warmup ratio with current best architecture to see if it helps convergence
+
+============================================================
+exp_id:             exp_137
+timestamp:          2026-03-11T21:46:52.487013
+mrr@10:             0.4700
+trajectory:         plateaued
+wall_time_s:        735
+steps:              106428
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.01, "dataset_fraction": 1.0, "cutoff_minutes": 12.253896586100261, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test very low InfoNCE temperature (0.01) to create sharper negatives with current best architecture
+
+============================================================
+exp_id:             exp_138
+timestamp:          2026-03-11T22:02:16.221967
+mrr@10:             0.4667
+trajectory:         plateaued
+wall_time_s:        900
+steps:              92796
+model_size_mb_fp16: 3.76
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test 3 layers with current best architecture to see if depth helps performance
+
+============================================================
+exp_id:             exp_139
+timestamp:          2026-03-11T22:17:27.976754
+mrr@10:             0.4697
+trajectory:         plateaued
+wall_time_s:        900
+steps:              73299
+model_size_mb_fp16: 4.33
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 4, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test 4 layers with current best architecture to see if more depth helps performance
+
+============================================================
+exp_id:             exp_140
+timestamp:          2026-03-11T22:32:40.540893
+mrr@10:             0.4641
+trajectory:         improving
+wall_time_s:        901
+steps:              130600
+model_size_mb_fp16: 3.20
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with current best architecture to see if it pushes performance
+
+============================================================
+exp_id:             exp_141
+timestamp:          2026-03-11T22:45:04.069185
+mrr@10:             0.4506
+trajectory:         plateaued
+wall_time_s:        732
+steps:              99621
+model_size_mb_fp16: 3.38
+hyperparams:        {"embed_dim": 32, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.19927062590917, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger intermediate dimension (512) with current best architecture to see if it helps performance
+
+============================================================
+exp_id:             exp_142
+timestamp:          2026-03-11T23:00:26.198093
+mrr@10:             0.4563
+trajectory:         plateaued
+wall_time_s:        900
+steps:              164811
+model_size_mb_fp16: 4.37
+hyperparams:        {"embed_dim": 64, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embed_dim=64 with smaller hidden_dim=128 to see if performance improves while staying under 10MB
+
+============================================================
+exp_id:             exp_143
+timestamp:          2026-03-11T23:15:37.074530
+mrr@10:             0.4813
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129557
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher num_heads (3) with embed_dim=64 to see if more attention heads help performance
+
+============================================================
+exp_id:             exp_144
+timestamp:          2026-03-11T23:30:47.942874
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126531
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with embed_dim=64 to see if it improves performance
+
+============================================================
+exp_id:             exp_145
+timestamp:          2026-03-11T23:43:14.898055
+mrr@10:             0.4762
+trajectory:         plateaued
+wall_time_s:        736
+steps:              105910
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.268466325600942, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with embed_dim=64 to see if it pushes performance
+
+============================================================
+exp_id:             exp_146
+timestamp:          2026-03-11T23:58:38.042886
+mrr@10:             0.4644
+trajectory:         plateaued
+wall_time_s:        900
+steps:              92445
+model_size_mb_fp16: 6.02
+hyperparams:        {"embed_dim": 64, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger hidden_dim (256) with 4 heads to see if increased capacity helps performance while staying under 10MB
+
+============================================================
+exp_id:             exp_147
+timestamp:          2026-03-12T00:13:48.963245
+mrr@10:             0.4609
+trajectory:         plateaued
+wall_time_s:        900
+steps:              93213
+model_size_mb_fp16: 5.64
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test 3 layers with current best architecture to see if depth helps performance
+
+============================================================
+exp_id:             exp_148
+timestamp:          2026-03-12T00:29:00.142450
+mrr@10:             0.4717
+trajectory:         diverging
+wall_time_s:        900
+steps:              129705
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.05, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test lower warmup ratio with current best architecture to see if it helps convergence
+
+============================================================
+exp_id:             exp_149
+timestamp:          2026-03-12T00:41:25.907936
+mrr@10:             0.4617
+trajectory:         plateaued
+wall_time_s:        735
+steps:              75798
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.245934049288431, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try smaller embed_dim (32) with larger hidden_dim (256) and more heads to see if this better trades off capacity vs size
+
+============================================================
+exp_id:             exp_150
+timestamp:          2026-03-12T00:56:48.200240
+mrr@10:             0.4581
+trajectory:         plateaued
+wall_time_s:        900
+steps:              92898
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try smaller embed_dim (32) with larger hidden_dim (256) and more heads to better trade off capacity vs size
+
+============================================================
+exp_id:             exp_151
+timestamp:          2026-03-12T01:11:59.046879
+mrr@10:             0.4606
+trajectory:         plateaued
+wall_time_s:        900
+steps:              90953
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with the smaller embed_dim/ larger hidden_dim config
+
+============================================================
+exp_id:             exp_152
+timestamp:          2026-03-12T01:27:10.146751
+mrr@10:             0.4572
+trajectory:         plateaued
+wall_time_s:        900
+steps:              164079
+model_size_mb_fp16: 4.37
+hyperparams:        {"embed_dim": 64, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embed_dim=64 with smaller hidden_dim=128 to see if performance improves while staying under 10MB
+
+============================================================
+exp_id:             exp_154
+timestamp:          2026-03-12T01:39:36.861262
+mrr@10:             0.4552
+trajectory:         plateaued
+wall_time_s:        733
+steps:              106257
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.212712184588115, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try intermediate embed_dim (48) with the best current architecture to find sweet spot
+
+============================================================
+exp_id:             exp_155
+timestamp:          2026-03-12T01:56:17.473713
+mrr@10:             0.4813
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129179
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Baseline config with hybrid loss (InfoNCE + L2 regularization)
+
+============================================================
+exp_id:             exp_156
+timestamp:          2026-03-12T02:11:28.803928
+mrr@10:             0.4717
+trajectory:         diverging
+wall_time_s:        900
+steps:              129306
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Higher learning rate with hybrid loss to see if it improves convergence
+
+============================================================
+exp_id:             exp_157
+timestamp:          2026-03-12T02:26:40.047479
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126343
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with hybrid loss
+
+============================================================
+exp_id:             exp_158
+timestamp:          2026-03-12T02:39:06.722850
+mrr@10:             0.4562
+trajectory:         plateaued
+wall_time_s:        736
+steps:              75547
+model_size_mb_fp16: 6.02
+hyperparams:        {"embed_dim": 64, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.261777190367381, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger hidden_dim (256) with more heads and hybrid loss
+
+============================================================
+exp_id:             exp_159
+timestamp:          2026-03-12T02:54:31.004739
+mrr@10:             0.4690
+trajectory:         plateaued
+wall_time_s:        900
+steps:              128009
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.05, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.001}
+notes:              Fix hybrid loss to properly apply L2 regularization on embeddings
+
+============================================================
+exp_id:             exp_161
+timestamp:          2026-03-12T03:09:44.865070
+mrr@10:             0.4717
+trajectory:         diverging
+wall_time_s:        900
+steps:              129659
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate with standard architecture
+
+============================================================
+exp_id:             exp_162
+timestamp:          2026-03-12T03:24:57.131656
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126929
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with current best architecture
+
+============================================================
+exp_id:             exp_163
+timestamp:          2026-03-12T03:37:17.690417
+mrr@10:             0.4602
+trajectory:         plateaued
+wall_time_s:        730
+steps:              75332
+model_size_mb_fp16: 4.14
+hyperparams:        {"embed_dim": 32, "hidden_dim": 256, "num_layers": 2, "num_heads": 4, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.159869774182637, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try smaller embed_dim with larger hidden_dim and more heads to better trade off capacity vs size
+
+============================================================
+exp_id:             exp_164
+timestamp:          2026-03-12T03:52:39.283635
+mrr@10:             0.4717
+trajectory:         diverging
+wall_time_s:        900
+steps:              129665
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test higher learning rate (1e-4) with best architecture to see if it pushes performance
+
+============================================================
+exp_id:             exp_165
+timestamp:          2026-03-12T04:07:50.590649
+mrr@10:             0.4625
+trajectory:         improving
+wall_time_s:        900
+steps:              165511
+model_size_mb_fp16: 6.24
+hyperparams:        {"embed_dim": 96, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embed_dim=96 with smaller hidden_dim=128 to better balance capacity vs size
+
+============================================================
+exp_id:             exp_166
+timestamp:          2026-03-12T04:23:01.849868
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126774
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with best architecture
+
+============================================================
+exp_id:             exp_167
+timestamp:          2026-03-12T04:35:29.086102
+mrr@10:             0.4639
+trajectory:         plateaued
+wall_time_s:        736
+steps:              99430
+model_size_mb_fp16: 5.26
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 512, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.264112281799317, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test larger intermediate_dim (512) with best architecture to increase capacity
+
+============================================================
+exp_id:             exp_168
+timestamp:          2026-03-12T04:50:50.292251
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              127064
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with the best architecture so far
+
+============================================================
+exp_id:             exp_169
+timestamp:          2026-03-12T05:06:01.366829
+mrr@10:             0.4588
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129508
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try lower learning rate with best architecture to see if it converges better
+
+============================================================
+exp_id:             exp_170
+timestamp:          2026-03-12T05:21:12.213717
+mrr@10:             0.4717
+trajectory:         diverging
+wall_time_s:        900
+steps:              129727
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate (1e-4) with best architecture to see if it pushes performance
+
+============================================================
+exp_id:             exp_171
+timestamp:          2026-03-12T05:33:40.318553
+mrr@10:             0.4552
+trajectory:         plateaued
+wall_time_s:        737
+steps:              106694
+model_size_mb_fp16: 4.13
+hyperparams:        {"embed_dim": 48, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.28075129588445, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try smaller embed_dim (48) with same hidden_dim to see if we can get better trade-off
+
+============================================================
+exp_id:             exp_172
+timestamp:          2026-03-12T05:49:02.757683
+mrr@10:             0.4609
+trajectory:         plateaued
+wall_time_s:        900
+steps:              93399
+model_size_mb_fp16: 5.64
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 3, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try 3 layers with best current architecture to see if adding depth helps
+
+============================================================
+exp_id:             exp_174
+timestamp:          2026-03-12T06:04:17.182113
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              128078
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.001}
+notes:              Try lower learning rate with L2 regularization to see if it improves convergence
+
+============================================================
+exp_id:             exp_175
+timestamp:          2026-03-12T06:19:28.165409
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126766
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Test weighted mean pooling with best architecture to see if it improves performance
+
+============================================================
+exp_id:             exp_176
+timestamp:          2026-03-12T06:31:51.149850
+mrr@10:             0.4707
+trajectory:         plateaued
+wall_time_s:        732
+steps:              156763
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 32, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.202098321914672, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate with smaller batch size to see if it pushes performance
+
+============================================================
+exp_id:             exp_177
+timestamp:          2026-03-12T06:47:14.515400
+mrr@10:             0.4565
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129648
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 1e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try even lower learning rate with best architecture to see if it improves convergence
+
+============================================================
+exp_id:             exp_178
+timestamp:          2026-03-12T07:02:25.413013
+mrr@10:             0.4565
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129678
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 2e-05, "warmup_ratio": 0.2, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try lower learning rate with longer warmup with best architecture
+
+============================================================
+exp_id:             exp_179
+timestamp:          2026-03-12T07:17:36.823614
+mrr@10:             0.4750
+trajectory:         improving
+wall_time_s:        900
+steps:              193476
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 32, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try smaller batch size with best architecture to see if it helps convergence
+
+============================================================
+exp_id:             exp_180
+timestamp:          2026-03-12T07:30:03.585725
+mrr@10:             0.4689
+trajectory:         diverging
+wall_time_s:        736
+steps:              104480
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.238352656364441, "init_pretrained": false, "l2_reg_weight": 0.001}
+notes:              Try adding L2 regularization on embeddings with best architecture
+
+============================================================
+exp_id:             exp_181
+timestamp:          2026-03-12T07:45:26.294153
+mrr@10:             0.4625
+trajectory:         improving
+wall_time_s:        900
+steps:              166423
+model_size_mb_fp16: 6.24
+hyperparams:        {"embed_dim": 96, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embed_dim=96 with smaller hidden_dim=128 to better balance capacity vs size
+
+============================================================
+exp_id:             exp_182
+timestamp:          2026-03-12T08:00:37.093757
+mrr@10:             0.4639
+trajectory:         diverging
+wall_time_s:        900
+steps:              125842
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 4, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try more heads (4) with same hidden_dim to see if attention capacity helps
+
+============================================================
+exp_id:             exp_183
+timestamp:          2026-03-12T08:15:48.178631
+mrr@10:             0.4611
+trajectory:         plateaued
+wall_time_s:        900
+steps:              128159
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.001}
+notes:              Add L2 regularization on embeddings to see if it helps convergence
+
+============================================================
+exp_id:             exp_184
+timestamp:          2026-03-12T08:28:14.606073
+mrr@10:             0.4641
+trajectory:         plateaued
+wall_time_s:        735
+steps:              103692
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.256717236836751, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try weighted mean pooling to see if it improves performance
+
+============================================================
+exp_id:             exp_185
+timestamp:          2026-03-12T08:43:36.341836
+mrr@10:             0.4652
+trajectory:         plateaued
+wall_time_s:        900
+steps:              129304
+model_size_mb_fp16: 4.62
+hyperparams:        {"embed_dim": 64, "hidden_dim": 128, "num_layers": 3, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try 3 layers with smaller hidden_dim (128) to see if we can get better performance within size constraints
+
+============================================================
+exp_id:             exp_186
+timestamp:          2026-03-12T08:58:47.166741
+mrr@10:             0.4623
+trajectory:         improving
+wall_time_s:        900
+steps:              105234
+model_size_mb_fp16: 4.88
+hyperparams:        {"embed_dim": 64, "hidden_dim": 128, "num_layers": 4, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try 4 layers with smaller hidden_dim (128) to see if we can get better performance within size constraints
+
+============================================================
+exp_id:             exp_187
+timestamp:          2026-03-12T09:13:59.309260
+mrr@10:             0.4639
+trajectory:         diverging
+wall_time_s:        900
+steps:              125777
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 4, "intermediate_dim": 384, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try 4 heads with same hidden_dim to see if attention capacity helps performance
+
+============================================================
+exp_id:             exp_188
+timestamp:          2026-03-12T09:26:26.116045
+mrr@10:             0.4564
+trajectory:         plateaued
+wall_time_s:        735
+steps:              135049
+model_size_mb_fp16: 6.24
+hyperparams:        {"embed_dim": 96, "hidden_dim": 128, "num_layers": 2, "num_heads": 2, "intermediate_dim": 256, "pooling": "mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 12.254907894134522, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try larger embed_dim=96 with smaller hidden_dim=128 to better balance capacity vs size
+
+============================================================
+exp_id:             exp_189
+timestamp:          2026-03-12T09:42:57.197106
+mrr@10:             0.4717
+trajectory:         diverging
+wall_time_s:        900
+steps:              129627
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "mean", "lr": 0.0001, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try higher learning rate (1e-4) with best architecture to see if it pushes performance
+
+============================================================
+exp_id:             exp_191
+timestamp:          2026-03-12T09:58:11.593924
+mrr@10:             0.4673
+trajectory:         plateaued
+wall_time_s:        900
+steps:              126768
+model_size_mb_fp16: 5.07
+hyperparams:        {"embed_dim": 64, "hidden_dim": 192, "num_layers": 2, "num_heads": 3, "intermediate_dim": 384, "pooling": "weighted_mean", "lr": 5e-05, "warmup_ratio": 0.1, "batch_size": 64, "max_seq_len": 128, "infonce_temp": 0.05, "dataset_fraction": 1.0, "cutoff_minutes": 15.0, "init_pretrained": false, "l2_reg_weight": 0.0}
+notes:              Try weighted mean pooling with best architecture to see if it improves performance

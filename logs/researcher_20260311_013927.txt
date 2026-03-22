@@ -1,0 +1,9 @@
+Analysis:
+The best MRR@10 so far is 0.4681 with 2-layer model (embed=48, hidden=192, pooling=mean, lr=0.0001). Architecture search shows that increasing layers from 2 to 3 doesn't improve performance (exp_018 vs exp_022). The current best is stable and we're not seeing further gains from larger hidden_dim or more layers. We should now explore: 1) 3-layer models with the current best hyperparameters, 2) learning rate fine-tuning around 1e-4, 3) the init_pretrained option which might give better initialization, and 4) smaller embed_dim to see if we can get under 4MB while maintaining performance.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try 3-layer model with best architecture so far", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_033"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0002, "notes": "Try higher learning rate (2e-4) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_034"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try init_pretrained with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_035"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try smaller embed_dim (32) with best hidden_dim (192)", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_036"}
+{"cutoff_minutes": 5, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try larger embed_dim (64) to see if it fits in 10MB budget", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_037"}

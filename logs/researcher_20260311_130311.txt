@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, exp_090 with embed_dim=32, hidden_dim=192, 2 layers, 3 heads, mean pooling achieved the best MRR@10=0.4731. The model is 3.20MB, well under the 10MB constraint. However, the trajectory has been plateaued for several runs. I'll first confirm this architecture with a longer training run to ensure stability, then explore structural changes to break the plateau. The hybrid loss implementation in the code is incomplete, so I'll also improve that.
+
+Experiments:
+{"cutoff_minutes": 20, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Confirm best architecture (exp_090) with longer training time (20min) to verify stability", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_102"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.0001, "lr": 5e-05, "notes": "Test improved hybrid loss with L2 regularization on embeddings for better generalization", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_103"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "infonce_temp": 0.01, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test lower InfoNCE temperature (0.01) to create sharper distribution over in-batch negatives", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_104"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try smaller hidden dimension (128) with 2 heads to reduce model size and potentially improve generalization", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_105"}
+{"cutoff_minutes": 15, "embed_dim": 48, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try larger embedding dimension (48) with smaller hidden (128) to test size/quality tradeoff", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_106"}

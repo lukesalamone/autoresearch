@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best performance so far is 0.4750 MRR@10 with a model size of 5.07MB. The current architecture (embed_dim=64, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384) is plateauing. I'll explore a few directions: 1) Try larger embed_dim with more heads to better utilize capacity, 2) Try different pooling strategies, 3) Try structural changes like adding L2 regularization on embeddings or switching to a hybrid loss.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 96, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try larger embed_dim=96 with smaller hidden_dim=128 to better balance capacity vs size", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_181"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try more heads (4) with same hidden_dim to see if attention capacity helps", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_182"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.001, "lr": 5e-05, "notes": "Add L2 regularization on embeddings to see if it helps convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_183"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try weighted mean pooling to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_184"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Try smaller embed_dim with larger hidden_dim and more heads to better trade off capacity vs size", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_185"}

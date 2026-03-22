@@ -1,0 +1,9 @@
+Analysis:
+Recent experiments have plateaued around MRR@10 ~0.48. The best performing configurations are at 5.07MB and 5.07MB, both with embed_dim=64, hidden_dim=192, num_layers=2, num_heads=3. The model size budget is tight, but there's still room to increase capacity. I'll try a few configurations that are slightly larger than current best but still under 10MB, plus a few architectural experiments to see if we can push performance further.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Try larger hidden_dim (256) with 4 heads to see if increased capacity helps performance while staying under 10MB", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_146"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test 3 layers with current best architecture to see if depth helps performance", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_147"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test lower warmup ratio with current best architecture to see if it helps convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "warmup_ratio": 0.05, "exp_id": "exp_148"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Try smaller embed_dim (32) with larger hidden_dim (256) and more heads to see if this better trades off capacity vs size", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_149"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with current best architecture to see if it pushes performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_150"}

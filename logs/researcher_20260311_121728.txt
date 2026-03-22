@@ -1,0 +1,7 @@
+Analysis:
+The best MRR@10 so far is 0.4731 with a 32-dim embedding, 192-hidden transformer, 2 layers, mean pooling. The architecture has plateaued. I'm now exploring a new architectural approach: adding a learned post-encoder projection head to decouple transformer hidden size from embedding size. This should allow smaller hidden dimensions while projecting to a larger output for better scoring. I'll test this with 32, 48, and 64 embedding dimensions to find the sweet spot.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Add post-encoder projection head with 32-dim output, hidden=128, lr=5e-5", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_099"}
+{"cutoff_minutes": 15, "embed_dim": 48, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Add post-encoder projection head with 48-dim output, hidden=128, lr=5e-5", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_100"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Add post-encoder projection head with 64-dim output, hidden=128, lr=5e-5", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_101"}

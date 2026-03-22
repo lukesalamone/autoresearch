@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best performing configuration so far is embed_dim=48, hidden_dim=192, num_layers=2, num_heads=3 with mean pooling and lr=0.0001 (exp_024). The model size is ~4.13MB. I want to explore variations around this architecture to see if we can squeeze out more performance. I'll try different learning rates, pooling methods, and batch sizes while keeping the core architecture fixed.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try higher learning rate with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_028"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 2e-05, "notes": "Try lower learning rate with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_029"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try weighted_mean pooling with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_030"}
+{"batch_size": 32, "cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try smaller batch size with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_031"}
+{"batch_size": 128, "cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try larger batch size with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_032"}

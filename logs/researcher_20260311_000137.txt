@@ -1,0 +1,9 @@
+Analysis:
+The experiments so far show that factorized embeddings work well for small models. The pretrained initialization gives the best MRR@10 (0.4519) but exceeds the 10MB limit. Smaller factorized models are achieving ~0.41 MRR@10 with sizes around 2.5-3.7MB. The current best is embed=48, hidden=128, 3 layers (0.4121 MRR@10, 3.69MB). I want to explore the architecture space more systematically: try larger embed_dims with fewer layers to see if we can get better MRR@10 while staying under 10MB, try more layers to see if it helps, and try different pooling strategies.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 64, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring larger embed_dim (64) with fewer layers (2) - should be ~4.3MB", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_005"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring 4-layer architecture with embed=32 - should be ~5.1MB", "num_heads": 2, "num_layers": 4, "pooling": "mean", "exp_id": "exp_006"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring 6-layer architecture with embed=32 - should be ~6.3MB", "num_heads": 2, "num_layers": 6, "pooling": "mean", "exp_id": "exp_007"}
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Testing weighted_mean pooling with current best architecture", "num_heads": 2, "num_layers": 3, "pooling": "weighted_mean", "exp_id": "exp_008"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring wider hidden_dim (192) with 3 layers and 3 heads - should be ~6.1MB", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_009"}

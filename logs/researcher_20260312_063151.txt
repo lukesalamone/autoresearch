@@ -1,0 +1,9 @@
+Analysis:
+The best MRR@10 so far is 0.4717 with a configuration of embed_dim=64, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384, pooling=mean. The model size is 5.07MB. Most recent experiments show that increasing capacity beyond this point doesn't help, and higher learning rates cause divergence. I'll explore two paths: (1) fine-tune the best architecture with different hyperparameters, and (2) implement a structural change to the loss function to add more regularization.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 1e-05, "notes": "Try even lower learning rate with best architecture to see if it improves convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_177"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 2e-05, "notes": "Try lower learning rate with longer warmup with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "warmup_ratio": 0.2, "exp_id": "exp_178"}
+{"batch_size": 32, "cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try smaller batch size with best architecture to see if it helps convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_179"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.001, "lr": 5e-05, "notes": "Try adding L2 regularization on embeddings with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_180"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "infonce_temp": 0.1, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try higher InfoNCE temperature with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_181"}

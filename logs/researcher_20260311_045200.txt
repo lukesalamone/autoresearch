@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best MRR@10 (~0.4689) was achieved with embed=32, hidden=192, layers=2, heads=3, pooling=mean, lr=0.0001. The model size was around 3.2MB, well under the 10MB limit. We've explored various pooling strategies and loss functions but haven't fully optimized the hybrid loss approach. I'll focus on fine-tuning the best architecture with different learning rates, pooling strategies, and a more robust hybrid loss implementation.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.00015, "notes": "Try higher learning rate (1.5e-4) with best architecture to see if we can get better convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_064"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try lower learning rate (5e-5) with best architecture to see if we can get better convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_065"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try weighted_mean pooling with best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_066"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.0001, "lr": 0.0001, "notes": "Test improved hybrid loss with better L2 regularization implementation on best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_067"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.001, "lr": 0.0001, "notes": "Test improved hybrid loss with stronger L2 regularization on best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_068"}

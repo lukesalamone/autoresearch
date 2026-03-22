@@ -1,0 +1,9 @@
+Analysis:
+Analysis of previous experiments shows that factorized embeddings with hidden_dim=192 and embed_dim=32 perform well (0.4150 MRR@10 at ~5.5MB). The best performance was 0.4519 with embed_dim=128, hidden_dim=128, 2 layers (8.33MB). I'll explore architectures that are under 10MB, focusing on the 3-layer configurations with smaller embed_dim and larger hidden_dim, and also test weighted_mean pooling which may improve performance. I'll also try higher learning rates to see if we can push performance further.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring 3-layer with embed=32, hidden=192 - should be ~5.5MB, following successful pattern", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_011"}
+{"cutoff_minutes": 10, "embed_dim": 64, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=64, hidden=256 - should be ~6.3MB, testing larger embed", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_012"}
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=48, hidden=256 - should be ~6.3MB, testing intermediate embed", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_013"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring 3-layer with embed=32, hidden=192 using weighted_mean pooling - should be ~5.5MB", "num_heads": 3, "num_layers": 3, "pooling": "weighted_mean", "exp_id": "exp_014"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Exploring 3-layer with embed=32, hidden=192 with higher LR - should be ~5.5MB", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_015"}

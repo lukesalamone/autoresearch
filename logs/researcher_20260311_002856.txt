@@ -1,0 +1,30 @@
+Analysis:
+Based on the results so far, I can see that:
+1. The best MRR@10 achieved is 0.4519 (exp_001) with embed_dim=128, hidden_dim=128, 2 layers.
+2. The model size is 8.33MB, which is over the 10MB limit, but it's using the pretrained init.
+3. The factorized embeddings experiments (exp_002 to exp_016) show that smaller embed_dim and more layers generally lead to better MRR@10, but also higher model size.
+4. The best factorized results so far are:
+   - exp_010: MRR=0.4379, embed=64, hidden=192, 2 layers, 5.07MB
+   - exp_008: MRR=0.4488, embed=48, hidden=192, 2 layers, 4.13MB
+   - exp_007: MRR=0.4150, embed=32, hidden=192, 3 layers, 3.76MB
+   - exp_005: MRR=0.4252, embed=64, hidden=128, 2 layers, 4.37MB
+
+The exploration shows that:
+- 2-layer models with larger hidden_dim (192) and smaller embed_dim (32 or 48) are promising
+- 3-layer models with embed=32 and hidden=192 are also good
+- The size budget is tight, with ~6.3MB being the limit for 2-layer models with hidden=256
+
+I will focus on exploring:
+1. 2-layer models with embed=32 and hidden=256 (which should be around 6.3MB)
+2. 3-layer models with embed=32 and hidden=256 (should be around 6.3MB)
+3. 2-layer models with embed=48 and hidden=256 (should be around 6.3MB)
+4. 2-layer models with embed=64 and hidden=256 (should be around 6.3MB)
+5. 3-layer models with embed=48 and hidden=256 (should be around 6.3MB)
+These are all around the 6.3MB boundary, which is a good balance between size and performance.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_017"}
+{"cutoff_minutes": 5, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 3-layer with embed=32, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 3, "pooling": "mean", "exp_id": "exp_018"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=48, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_019"}
+{"cutoff_minutes": 5, "embed_dim": 64, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 2-layer with embed=64, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_020"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring 3-layer with embed=48, hidden=256 - should be ~6.3MB, testing larger hidden_dim", "num_heads": 4, "num_layers": 3, "pooling": "mean", "exp_id": "exp_021"}

@@ -1,0 +1,9 @@
+Analysis:
+The best MRR@10 so far is 0.4681 from exp_024 with embed_dim=48, hidden_dim=192, num_layers=2, num_heads=3, pooling=mean, lr=0.0001. The architecture is stable and the model size is 4.13MB. I will explore variations with different learning rates and a slightly larger model to see if we can improve further. The current best architecture is showing signs of plateauing.
+
+Experiments:
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.00015, "notes": "Try higher learning rate (1.5e-4) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_038"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Try lower learning rate (5e-5) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_039"}
+{"cutoff_minutes": 5, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try larger embed_dim (64) with best hidden_dim (192) - should be ~5.4MB", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_040"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Try weighted_mean pooling with best architecture and lr=0.0001", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_041"}
+{"cutoff_minutes": 5, "embed_dim": 48, "hidden_dim": 256, "intermediate_dim": 512, "lr": 0.0001, "notes": "Try larger hidden_dim (256) with 2 layers - should be ~6.3MB", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_042"}

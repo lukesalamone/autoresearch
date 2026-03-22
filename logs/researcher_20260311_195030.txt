@@ -1,0 +1,9 @@
+Analysis:
+The best MRR@10 so far is 0.4747 with embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, and InfoNCE temp=0.02. I'll now explore a few promising directions: larger embed_dim to increase capacity, adding depth with 3 layers, trying weighted_mean pooling, and testing hybrid loss with L2 regularization. I'll also try pre-trained initialization as a potential way to get a better starting point.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test larger embed_dim=64 with 2 layers to see if increased capacity helps performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_130"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test 3 layers with current best architecture to see if depth helps performance", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_131"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with current best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_132"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "l2_reg_weight": 0.0001, "lr": 5e-05, "notes": "Test hybrid loss with L2 regularization on embeddings for better generalization", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_133"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "init_pretrained": true, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test pre-trained initialization with best architecture so far", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_134"}

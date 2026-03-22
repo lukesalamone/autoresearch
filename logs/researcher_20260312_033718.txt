@@ -1,0 +1,9 @@
+Analysis:
+The best result so far is 0.4813 MRR@10 with embed_dim=64, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384, pooling=mean, lr=5e-5. The architecture is plateauing. I'll explore higher learning rates, different pooling strategies, and architectural variations to push performance further while staying under 10MB.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with best architecture to see if it pushes performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_164"}
+{"cutoff_minutes": 15, "embed_dim": 96, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try larger embed_dim=96 with smaller hidden_dim=128 to better balance capacity vs size", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_165"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_166"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 512, "lr": 5e-05, "notes": "Test larger intermediate_dim (512) with best architecture to increase capacity", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_167"}
+{"cutoff_minutes": 15, "embed_dim": 64, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test lower warmup ratio (0.05) with best architecture to see if it helps convergence", "num_heads": 3, "num_layers": 2, "pooling": "mean", "warmup_ratio": 0.05, "exp_id": "exp_168"}

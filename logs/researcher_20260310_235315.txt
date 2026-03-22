@@ -1,0 +1,9 @@
+Analysis:
+The current experiments show that pretrained initialization (exp_001) achieves better MRR@10 (0.4519) but is larger (8.33MB), while the factorized approach (exp_002) is smaller (2.50MB) but underperforms (0.4103). I need to explore the architecture space more systematically to find the sweet spot. The experiments will test various embed_dim (32, 48, 64) with hidden_dim (128, 192, 256) combinations, varying num_layers (2-5) to see where we hit the 10MB limit. I'll start with a focused exploration of promising configurations.
+
+Experiments:
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring deeper network with factorized embeddings: embed=32, hidden=128, 4L", "num_heads": 2, "num_layers": 4, "pooling": "mean", "exp_id": "exp_003"}
+{"cutoff_minutes": 10, "embed_dim": 48, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring deeper network with factorized embeddings: embed=48, hidden=128, 4L", "num_heads": 2, "num_layers": 4, "pooling": "mean", "exp_id": "exp_004"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Exploring wider network with factorized embeddings: embed=32, hidden=192, 3L", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_005"}
+{"cutoff_minutes": 10, "embed_dim": 64, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Exploring wider embedding with factorized embeddings: embed=64, hidden=128, 3L", "num_heads": 2, "num_layers": 3, "pooling": "mean", "exp_id": "exp_006"}
+{"cutoff_minutes": 10, "embed_dim": 32, "hidden_dim": 256, "intermediate_dim": 512, "lr": 5e-05, "notes": "Exploring wide network with factorized embeddings: embed=32, hidden=256, 2L", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_007"}

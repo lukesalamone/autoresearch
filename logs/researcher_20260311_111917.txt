@@ -1,0 +1,9 @@
+Analysis:
+The best result so far is 0.4731 MRR@10 with a 32-dim embedding, 192-dim hidden, 2 layers, 3 heads. Most recent experiments have plateaued. I'll explore variations with the current best architecture while also implementing a structural change: learned post-encoder projection head to decouple transformer hidden size from embedding size. This should allow us to use smaller hidden dimensions and project to larger output for better dot-product scoring.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Confirm current best architecture with longer training time", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_095"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test lower learning rate with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_096"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test weighted_mean pooling with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_097"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "infonce_temp": 0.01, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test lower InfoNCE temperature with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_098"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 128, "intermediate_dim": 256, "lr": 0.0001, "notes": "Test smaller hidden_dim with pretrained initialization (to see if we can get better performance with smaller model)", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_099"}

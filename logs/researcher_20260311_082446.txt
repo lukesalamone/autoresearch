@@ -1,0 +1,9 @@
+Analysis:
+Based on the results, the best performing configuration is embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384 with weighted_mean pooling and lr=5e-5. The MRR@10 plateaued around 0.4711. I'll explore variations in learning rate, loss function, and try a structural change to the model by adding a learned post-encoder projection head to decouple the transformer hidden size from the final embedding size.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 2e-05, "notes": "Test lower learning rate (2e-5) with best architecture to see if it improves convergence", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_083"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with best architecture to see if it breaks plateau", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_084"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test different InfoNCE temperature (0.1) with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_085"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test hybrid loss with L2 regularization on embeddings with best architecture", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_086"}
+{"cutoff_minutes": 20, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Add learned post-encoder projection head to decouple transformer hidden size from final embedding size", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_087"}

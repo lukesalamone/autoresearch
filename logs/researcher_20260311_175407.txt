@@ -1,0 +1,9 @@
+Analysis:
+The best MRR@10 so far is 0.4850 (exp_112), achieved with embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384. The model is at 3.20MB, well under the 10MB limit. Recent experiments have plateaued, with no significant improvement from varying hyperparameters. I'll now try to exploit the current best architecture by varying learning rate, pooling strategy, and number of layers to see if we can push performance further while staying within size constraints.
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test 3 layers with current best architecture to see if depth helps performance", "num_heads": 3, "num_layers": 3, "pooling": "mean", "exp_id": "exp_122"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test weighted mean pooling with current best architecture to see if it improves performance", "num_heads": 3, "num_layers": 2, "pooling": "weighted_mean", "exp_id": "exp_123"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate (1e-4) with current best architecture to see if it pushes performance", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_124"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "infonce_temp": 0.02, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test lower InfoNCE temperature (0.02) to create sharper negatives with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_125"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 256, "init_pretrained": true, "intermediate_dim": 512, "lr": 5e-05, "notes": "Test pretrained initialization with larger hidden dimension (256) and 4 heads to see if it improves performance", "num_heads": 4, "num_layers": 2, "pooling": "mean", "exp_id": "exp_126"}

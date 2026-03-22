@@ -1,0 +1,13 @@
+Analysis:
+Based on the results, the current best performing architecture is embed_dim=32, hidden_dim=192, num_layers=2, num_heads=3, intermediate_dim=384 with mean pooling (MRR@10 = 0.4731). We've explored several configurations and found that factorized embeddings work well for staying under the 10MB limit. Now I want to explore:
+1. Whether using the pretrained initialization helps
+2. Trying a few more architectures that might be under the size limit
+3. Testing different hyperparameters like batch size and learning rate
+4. Testing if we can get better performance with a different pooling strategy or loss function
+
+Experiments:
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Confirm best architecture with pretrained initialization", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_110"}
+{"cutoff_minutes": 15, "embed_dim": 48, "hidden_dim": 128, "intermediate_dim": 256, "lr": 5e-05, "notes": "Try larger embed_dim with smaller hidden_dim to see if we can improve performance", "num_heads": 2, "num_layers": 2, "pooling": "mean", "exp_id": "exp_111"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 0.0001, "notes": "Test higher learning rate with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_112"}
+{"batch_size": 128, "cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test larger batch size with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_113"}
+{"cutoff_minutes": 15, "embed_dim": 32, "hidden_dim": 192, "infonce_temp": 0.02, "intermediate_dim": 384, "lr": 5e-05, "notes": "Test different InfoNCE temperature with current best architecture", "num_heads": 3, "num_layers": 2, "pooling": "mean", "exp_id": "exp_114"}
