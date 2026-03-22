@@ -3,7 +3,7 @@
 
 # Autoresearch
 
-This autoresearch experiment is a local-only adaptation of Andrej Karpathy's Autoresearch.
+This autoresearch experiment is a local-only adaptation of [Andrej Karpathy's Autoresearch](https://github.com/karpathy/autoresearch).
 
 For more info please see [the associated blog post](https://blog.lukesalamone.com/posts/autoresearch/).
 
